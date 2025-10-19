@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extensions</title>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #0f1117;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #141820;
+      width: 800px;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      background-color: hsl(226, 25%, 17%);
+      width: 100%;
+      height: 60px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 500px;
+    }
+
+    .header-left .logo {
+      padding: 20px;
+      width: 170px;
+      height: 170px;
+    }
+
+    .header-left h2 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-bar h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      background-color: #1c1f27;
+      border: none;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #2b2f38;
+    }
+
+    .btn.all {
+      background-color: #e93e3a;
+    }
+
+    .extensions-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .extension {
+      background-color: #1a1e26;
+      border-radius: 10px;
+      padding: 15px;
+      min-width: 226px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .extension-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .extension-top img {
+      width: 30px;
+      height: 30px;
+      background-color: #2b2f38;
+      border-radius: 6px;
+    }
+
+    .extension-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .extension-desc {
+      font-size: 13px;
+      color: #bbb;
+      margin: 0 0 10px 0;
+      line-height: 1.4;
+    }
+
+    .extension-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .remove-btn {
+      background-color: #2b2f38;
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    .remove-btn:hover {
+      background-color: #e93e3a;
+    }
+
+    .toggle {
+      width: 30px;
+      height: 15px;
+      background-color: #555;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .toggle::after {
+      content: "";
+      width: 13px;
+      height: 13px;
+      background-color: #e93e3a;
+      border-radius: 50%;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+    }
+
+    .sun {
+      width: 25px;
+      height: 25px;
+    }
+
+    .sun-bg {
+      background-color: hsl(225, 23%, 24%);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-left">
+        <img src="./logo.svg" alt="logo">
+        <div class="sun-bg">
+          <img src="./icon-sun.svg" class="sun">
+        </div>
+      </div>
+    </div>
+
+    <div class="top-bar">
+      <h3>Extensions List</h3>
+      <div class="buttons">
+        <button class="btn all">ALL</button>
+        <button class="btn">Active</button>
+        <button class="btn">Inactive</button>
+      </div>
+    </div>
+    <div class="extensions-list">
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-devlens.svg" alt="DevLens icon">
+            <p class="extension-title">DevLens</p>
+          </div>
+          <p class="extension-desc">Quickly inspect page layouts and <br>visualize element boundaries.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-style-spy.svg" alt="StyleSpy icon">
+            <p class="extension-title">StyleSpy</p>
+          </div>
+          <p class="extension-desc">Instantly analyze and copy CSS from <br>any webpage element.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-speed-boost.svg" alt="SpeedBoost icon">
+            <p class="extension-title">SpeedBoost</p>
+          </div>
+          <p class="extension-desc">Optimizes browser resource usage to <br>accelerate page loading.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-devlens.svg" alt="DevLens icon">
+            <p class="extension-title">DevLens</p>
+          </div>
+          <p class="extension-desc">Quickly inspect page layouts and <br>visualize element boundaries.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-style-spy.svg" alt="StyleSpy icon">
+            <p class="extension-title">StyleSpy</p>
+          </div>
+          <p class="extension-desc">Instantly analyze and copy CSS from <br>any webpage element.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-speed-boost.svg" alt="SpeedBoost icon">
+            <p class="extension-title">SpeedBoost</p>
+          </div>
+          <p class="extension-desc">Optimizes browser resource usage to <br>accelerate page loading.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-devlens.svg" alt="DevLens icon">
+            <p class="extension-title">DevLens</p>
+          </div>
+          <p class="extension-desc">Quickly inspect page layouts and <br>visualize element boundaries.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-style-spy.svg" alt="StyleSpy icon">
+            <p class="extension-title">StyleSpy</p>
+          </div>
+          <p class="extension-desc">Instantly analyze and copy CSS from <br>any webpage element.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-speed-boost.svg" alt="SpeedBoost icon">
+            <p class="extension-title">SpeedBoost</p>
+          </div>
+          <p class="extension-desc">Optimizes browser resource usage to <br>accelerate page loading.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-devlens.svg" alt="DevLens icon">
+            <p class="extension-title">DevLens</p>
+          </div>
+          <p class="extension-desc">Quickly inspect page layouts and <br>visualize element boundaries.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-style-spy.svg" alt="StyleSpy icon">
+            <p class="extension-title">StyleSpy</p>
+          </div>
+          <p class="extension-desc">Instantly analyze and copy CSS from <br>any webpage element.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="extension">
+        <div>
+          <div class="extension-top">
+            <img src="./logo-speed-boost.svg" alt="SpeedBoost icon">
+            <p class="extension-title">SpeedBoost</p>
+          </div>
+          <p class="extension-desc">Optimizes browser resource usage to <br>accelerate page loading.</p>
+        </div>
+        <div class="extension-bottom">
+          <button class="remove-btn">Remove</button>
+          <div class="toggle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
